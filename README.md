@@ -15,3 +15,6 @@ This is a hangman-like text-guessing game added with different features and func
 6. Proper indentation and naming styles
 7. In-code documentation
 
+# Getting started
+
+# Contributing
