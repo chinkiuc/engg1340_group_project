@@ -1,7 +1,15 @@
 # Engg1340 Group Project
 Welcome the Engg1340 group project repo. This is a text-based game project complied with mainly C++ language.
 
-# Features
+# Identification of group members
+1. Dev Choradia Manoj (3035666669)
+2.
+
+# Game description and rules
+
+Very similar to hangman...
+
+# Features 
 
 This is a hangman-like text-guessing game added with different features and functions:
 
