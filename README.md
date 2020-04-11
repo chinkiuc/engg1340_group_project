@@ -3,7 +3,7 @@ Welcome the Engg1340 group project repo. This is a text-based game project compl
 
 # Identification of group members
 1. Dev Choradia Manoj (3035666669)
-2.
+2. Choi Chin Kiu (3035557351)
 
 # Game description and rules
 
@@ -12,6 +12,11 @@ Very similar to hangman...
 # Features 
 
 This is a hangman-like text-guessing game added with different features and functions:
+1. Time counting function(to be implemented)
+2. Score board function(to be implemented)
+3. 
+4. 
+5.
 
 
 # Requirements 
@@ -25,4 +30,4 @@ This is a hangman-like text-guessing game added with different features and func
 
 # Getting started
 
-# Contributing
+
