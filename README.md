@@ -15,8 +15,8 @@ The game is a Single Player game where a player has to guess a certain word in t
 This is a hangman-like text-guessing game added with different features and functions:
 1. Time counting function(to be implemented)
 2. Score board function(to be implemented)
-3. 
-4. 
+3. Random function to generate words
+4. Result deciding function
 5.
 
 
