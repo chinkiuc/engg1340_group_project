@@ -17,7 +17,7 @@ This is a hangman-like text-guessing game added with different features and func
 2. Score board function(to be implemented)
 3. Random function to generate words
 4. Result deciding function
-5.
+5. Pictorial representation
 
 
 # Requirements 
