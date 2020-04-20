@@ -1,9 +1,11 @@
-#include<iostream>
-#include<cctype>
-#include<cstring>
-#include<cstdlib>
+#include <iostream>
+#include <cctype>
+#include <cstring>
+#include <cstdlib>
+#include <string> 
 using namespace std;
 static int ct=0;
+string playername;
 void hang(char s[][100],int x)
 {
 char al[26];
@@ -125,7 +127,8 @@ else
   cout<<"The movie is "<<s[x];
 }
 }
-int main()
+
+int game()
 {
     int x,op;
 char e[100][100]={"AVENGERS","MISSION IMPOSSIBLE","HARRY POTTER","DARK KNIGHT","INCEPTION","CONJURING","THE MATRIX","TERMINATOR","TRANSOFRMERS","DIE HARD","SKYFALL","CASINO ROYALE","EXORCIST","SPEED","BLACK PANTHER","FAST AND FURIOUS","JOHN WICK","INSIDIOUS"};
@@ -151,5 +154,73 @@ switch(op)
 	break;
 }
 ct=0;
-return 0;
 }
+
+void EnterPlayerName(){
+	
+	cout<<"\n\n\n\n  Hi, Player. \n  Welcome to <gamename> ! \n\n _______________________________\n\n  What's your name: ";
+	cin >> playername;
+	system("CLS");
+	
+}
+
+void Start(){
+
+	int option;
+
+	cout <<"\n\n\n  Hi, " << playername <<".\n ________________________________\n\n";
+	cout <<"  1. Start Game"<<endl;
+	cout <<"  2. Scoreboard"<<endl;
+	cout <<"  3. How to play"<<endl;
+	cout <<"  4. <To be implemented>"<<endl;
+	cout <<"\n  9. Exit.";
+	cout <<" \n ________________________________\n\n Please enter your choice: " ;
+	cin >> option;
+
+	system("CLS");
+	cout <<"\n\n\n  Hi, " << playername <<".\n ________________________________\n\n";
+	cout <<"  1. Start Game"<<endl;
+	cout <<"  2. Scoreboard"<<endl;
+	cout <<"  3. How to play"<<endl;
+	cout <<"  4. <To be implemented>"<<endl;
+	cout <<"\n  9. Exit.";	
+	
+	
+	switch (option){
+		
+		case 9:
+			cout << " \n ________________________________\n\n  See you!";
+			exit(0);
+			break;
+		case 1:
+			system("CLS"); 
+			game();
+			break;
+		case 2:
+			system("CLS");
+			cout << "To be implemented.";
+			break;
+		case 3:
+			system("CLS");
+			cout << "To be implemented.";
+			break;
+		case 4:
+			system ("CLS");
+			cout << "To be implemented.";
+			break;
+		default:
+			system ("CLS");
+			cout << " \n\n  Unknown command. Please select again...";
+			Start();
+
+}
+}
+
+
+
+
+int main(){
+	EnterPlayerName();
+	Start();
+}
+
