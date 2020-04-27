@@ -195,6 +195,64 @@ void EnterPlayerName()
 }
 
 
+void Start()
+{
+
+	int option;
+
+	cout <<"\n\n\n  Hi, " << playername <<".\n ________________________________\n\n";
+	cout <<"  1. Start Game"<<endl;
+	cout <<"  2. Scoreboard"<<endl;
+	cout <<"  3. How to play"<<endl;
+	cout <<"  4. <To be implemented>"<<endl;
+	cout <<"\n  9. Exit.";
+	cout <<" \n ________________________________\n\n Please enter your choice: " ;
+	cin >> option;
+
+	system("CLS");
+	cout <<"\n\n\n  Hi, " << playername <<".\n ________________________________\n\n";
+	cout <<"  1. Start Game"<<endl;
+	cout <<"  2. Scoreboard"<<endl;
+	cout <<"  3. How to play"<<endl;
+	cout <<"  4. <To be implemented>"<<endl;
+	cout <<"\n  9. Exit.";	
+	
+	
+	switch (option)
+	{
+		
+		case 9:
+			cout << " \n ________________________________\n\n  See you!";
+			exit(0);
+			break;
+		case 1:
+			system("CLS"); 
+			game();
+			break;
+		case 2:
+			system("CLS");
+			cout << "To be implemented.";
+			break;
+		case 3:
+			system("CLS");
+			cout<<endl;
+			cout << "\t\t      RULES"<<endl
+			<<"1. Fill in all the blanks "<<endl
+			<<"2. To fill, guess letters. If present they would get filled. Else a part of a man getting hanged would be printed"<<endl
+			<<"3. Do not let the man get hanged , comlete the movie and win the game"<<endl
+			<<"4. The theme is MOVIES";
+			break;
+		case 4:
+			system ("CLS");
+			cout << "To be implemented.";
+			break;
+		default:
+			system ("CLS");
+			cout << " \n\n  Unknown command. Please select again...";
+			Start();
+
+}
+}
 
 
 
