@@ -39,11 +39,4 @@ This is a text-guessing game added with different features and functions:
 5. Pictorial representation and other functions like stacks and queues used for order management.
 
 
-# Requirements 
-1. Generation of random game sets or events
-2. Data structures for storing game status
-3. Dynamic memory management
-4. File input/output (e.g., for loading/saving game status)
-5. Program codes in multiple files
-6. Proper indentation and naming styles
-7. In-code documentation
+
