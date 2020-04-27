@@ -30,24 +30,25 @@ for(i=0;i<strlen(s[x]);i++)
 
 for(;ct<9;)
 { 
-	cout<<"\n\n No. of turns remaining: "<<9-ct<<' ';
+  cout<<"\n\n No. of turns remaining: "<<9-ct<<' ';
   cout<<"\n Enter letter: ";
   cin>>alpha;
   alpha=toupper(alpha);
   ct1=0;
   for(j=0;j<strlen(s[x]);j++)
-   { if(s[x][j]==alpha)
+   { 
+       if(s[x][j]==alpha)
        { s1[j]=alpha;
 	 ct1++;
-       }
-   }s1[j]='\0';
-  if(ct1==0)
-  {ct++;}
+    }
+   }
+   s1[j]='\0';
+   if(ct1==0)
+   ct++; 
 
 
   for(j=0;j<strlen(s1);j++)      //couting the word to see what happened
   cout<<s1[j]<<' ';
-	
   ct1=0;
   for(j=0;j<strlen(s1);j++)      //to check how many letters they found
   if(s1[j]!='_')
@@ -60,7 +61,8 @@ for(;ct<9;)
    al[i]='/';
   for(i=0,j=65;i<26;i++,j++)
   if(al[i]=='/')
-  {char s[2];
+  {
+   char s[2];
    s[0]=(char)j;
    s[1]='\0';
    cout<<s;
@@ -232,7 +234,12 @@ void Start()
 			break;
 		case 3:
 			system("CLS");
-			cout << "To be implemented.";
+			cout<<endl;
+			cout << "\t\t      RULES"<<endl
+			<<"1. Fill in all the blanks "<<endl
+			<<"2. To fill, guess letters. If present they would get filled. Else a part of a man getting hanged would be printed"<<endl
+			<<"3. Do not let the man get hanged , comlete the movie and win the game"<<endl
+			<<"4. The theme is MOVIES";
 			break;
 		case 4:
 			system ("CLS");
@@ -249,8 +256,8 @@ void Start()
 
 
 
-int main(){
+int main()
+{
 	EnterPlayerName();
 	Start();
 }
-
