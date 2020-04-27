@@ -19,7 +19,8 @@ char alpha;
 char s1[100];
 
 for(i=0;i<strlen(s[x]);i++)
- { if(isalnum(s[x][i]))
+ { 
+	if(isalnum(s[x][i]))
     s1[i]='_';
    else
     s1[i]=' ';
@@ -28,7 +29,8 @@ for(i=0;i<strlen(s[x]);i++)
  }
 
 for(;ct<9;)
-{ cout<<"\n\n No. of turns remaining: "<<9-ct<<' ';
+{ 
+	cout<<"\n\n No. of turns remaining: "<<9-ct<<' ';
   cout<<"\n Enter letter: ";
   cin>>alpha;
   alpha=toupper(alpha);
@@ -45,6 +47,7 @@ for(;ct<9;)
 
   for(j=0;j<strlen(s1);j++)      //couting the word to see what happened
   cout<<s1[j]<<' ';
+	
   ct1=0;
   for(j=0;j<strlen(s1);j++)      //to check how many letters they found
   if(s1[j]!='_')
@@ -73,42 +76,59 @@ for(;ct<9;)
    cout<<endl;
   switch(ct)
    {
-    case 1:cout<<"  O"<<endl;     break;
+    case 1:cout<<"  O"<<endl;   
+		  break;
+		  
     case 2:cout<<"  O"<<endl;
 	   cout<<"  |"<<endl;
-	   cout<<"  |"<<endl;break;
+	   cout<<"  |"<<endl;
+		  break;
+		  
     case 3:cout<<"  O"<<endl;
 	   cout<<" \\|"<<endl;
-	   cout<<"  |"<<endl;break;
+	   cout<<"  |"<<endl;
+		  break;
+		  
     case 4:cout<<"  O"<<endl;
 	   cout<<" \\|/"<<endl;
-	   cout<<"  |"<<endl;  break;
+	   cout<<"  |"<<endl; 
+		  break;
+		  
     case 5:cout<<"  O"<<endl;
 	   cout<<" \\|/"<<endl;
 	   cout<<"  |"<<endl;
-	   cout<<" /"<<endl;break;
+	   cout<<" /"<<endl;
+		  break;
+		  
     case 6:cout<<"  O"<<endl;
 	   cout<<" \\|/"<<endl;
 	   cout<<"  | "<<endl;
-	   cout<<" / \\"<<endl;break;
+	   cout<<" / \\"<<endl;
+		  break;
+		  
     case 7:cout<<"  ! "<<endl
 	       <<"  O"<<endl
 	       <<" \\|/"<<endl
 	       <<"  | "<<endl
-	       <<" / \\"<<endl;break;
+	       <<" / \\"<<endl;
+		  break;
+		  
     case 8:cout<<"  ___ "<<endl
 	       <<"  ! "<<endl
 	       <<"  O"<<endl
 	       <<" \\|/"<<endl
 	       <<"  | "<<endl
-	       <<" / \\"<<endl;break;
+	       <<" / \\"<<endl;
+		  break;
+		  
     case 9:cout<<"  ___ "<<endl
 	       <<"  !    |"<<endl
 	       <<"  O    |"<<endl
 	       <<" \\|/   |"<<endl
 	       <<"  |    |"<<endl
 	       <<" / \\   |"<<endl
-	       <<"      ###"<<endl;break;
+	       <<"      ###"<<endl;
+		  break;
 
   }
    }
@@ -140,23 +160,31 @@ cout<<"\t\t     HANGMAN"<<endl
     <<" 2. Animated Movies"<<endl
     <<" 3. Big Hits(ALL CATEGORIES)"<<endl
     <<" Choose language: ";
+	
 cin>>op;
+	
 switch(op)
-{case 1:{ x=rand()%18;
+{case 1:{ 
+	x=rand()%18;
 	  hang(e,x);
 	  }
 	break;
- case 2:{ x=rand()%11;
-	hang(t,x); }
+ case 2:{
+	 x=rand()%11;
+	hang(t,x);
+ }
 	break;
- case 3:{ x=rand()%16;
-	hang(h,x); }
+ case 3:{
+	 x=rand()%16;
+	hang(h,x); 
+ }
 	break;
 }
 ct=0;
 }
 
-void EnterPlayerName(){
+void EnterPlayerName()
+{
 	
 	cout<<"\n\n\n\n  Hi, Player. \n  Welcome to <gamename> ! \n\n _______________________________\n\n  What's your name: ";
 	cin >> playername;
@@ -164,7 +192,8 @@ void EnterPlayerName(){
 	
 }
 
-void Start(){
+void Start()
+{
 
 	int option;
 
@@ -186,7 +215,8 @@ void Start(){
 	cout <<"\n  9. Exit.";	
 	
 	
-	switch (option){
+	switch (option)
+	{
 		
 		case 9:
 			cout << " \n ________________________________\n\n  See you!";
