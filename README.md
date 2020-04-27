@@ -7,6 +7,10 @@ Welcome the Engg1340 group project repo. This is a text-based game project compl
 
 # How to play
 
+A Dual Game.
+First is a text guessing game and the second is Hangman. 
+The user gets to choose what he/she wishes to play.
+
 --The first game is a word-guessing game.
 
 *Basic game rules
@@ -26,8 +30,11 @@ For stage more than 20, player get 250 scores for each word.
 When player CONSECUTIVELY guess the correct word without using any life for 5 times, the scores that player can get from each correct words are multiplied by 2. Once player makes one incorrect guess, spree stops.
 
 --The second game is HANGMAN
-We know the rules. Guess the word before the man gets hanged. Guess letters and fill the blanks to save.
-The theme of hangman is movies.
+
+We know the rules.
+Guess the word before the man gets hanged.Pictorial representation available.
+Guess letters and fill the blanks to save the man and win the game.
+The theme of hangman is movies with 3 sub topic to choose from.
 
 # Features 
 
