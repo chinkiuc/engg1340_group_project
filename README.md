@@ -7,7 +7,7 @@ Welcome the Engg1340 group project repo. This is a text-based game project compl
 
 # How to play
 
-It is a word-guessing game.
+--The first game is a word-guessing game.
 
 *Basic game rules
 
@@ -25,9 +25,13 @@ For stage more than 20, player get 250 scores for each word.
 
 When player CONSECUTIVELY guess the correct word without using any life for 5 times, the scores that player can get from each correct words are multiplied by 2. Once player makes one incorrect guess, spree stops.
 
+--The second game is HANGMAN
+We know the rules. Guess the word before the man gets hanged. Guess letters and fill the blanks to save.
+The theme of hangman is movies.
+
 # Features 
 
-This is a hangman-like text-guessing game added with different features and functions:
+This is a text-guessing game added with different features and functions:
 1. Random function used to generate words and other events in the game
 2. Multiple arrays and structures used to store words, blanks, letters and other game statuses 
 3. Both static and dynamic memory Allocation along with time calculating features
