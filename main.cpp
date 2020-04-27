@@ -135,7 +135,6 @@ for(;ct<9;)
   }
    }
 
-//cout<<endl<<"ct is :"
 if(ct!=9)
 {
  cout<<endl;
@@ -161,25 +160,29 @@ cout<<"\t\t     HANGMAN"<<endl
     <<" 1. English Action/ Horror"<<endl
     <<" 2. Animated Movies"<<endl
     <<" 3. Big Hits(ALL CATEGORIES)"<<endl
-    <<" Choose language: ";
+    <<" Choose Genre: ";
 	
 cin>>op;
 	
 switch(op)
-{case 1:{ 
+{
+    case 1:
+    { 
 	x=rand()%18;
 	  hang(e,x);
-	  }
+	}
 	break;
- case 2:{
-	 x=rand()%11;
+ case 2:    
+    {
+	x=rand()%11;
 	hang(t,x);
- }
+    }
 	break;
- case 3:{
-	 x=rand()%16;
+ case 3:
+    {
+	x=rand()%16;
 	hang(h,x); 
- }
+    }
 	break;
 }
 ct=0;
@@ -194,7 +197,6 @@ void EnterPlayerName()
 	
 }
 
-
 void Start()
 {
 
@@ -208,15 +210,6 @@ void Start()
 	cout <<"\n  9. Exit.";
 	cout <<" \n ________________________________\n\n Please enter your choice: " ;
 	cin >> option;
-
-	system("CLS");
-	cout <<"\n\n\n  Hi, " << playername <<".\n ________________________________\n\n";
-	cout <<"  1. Start Game"<<endl;
-	cout <<"  2. Scoreboard"<<endl;
-	cout <<"  3. How to play"<<endl;
-	cout <<"  4. <To be implemented>"<<endl;
-	cout <<"\n  9. Exit.";	
-	
 	
 	switch (option)
 	{
@@ -253,7 +246,6 @@ void Start()
 
 }
 }
-
 
 
 int main()
