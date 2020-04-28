@@ -1,0 +1,26 @@
+============================================================================================
+|	<WordFever!> Game Rule:								   |
+|											   |
+|	1. Player have FIVE attempts(life) to guess the correct word in each stage. 	   |
+|	2. Each incorrect guess costs ONE life. Once player's life reaches 0, game ends.   |
+|	3. When player guesses the correct answer, player moves to the next stage.         |
+|	4. Higher stage gives more score to player.					   |
+|	5. Player can input both lower/ upper case letter to answer.			   |
+|	6. The letters that the answer contains are shwon in ramdon order.		   |
+|	7. If the answer contains a SPACE, it will be shown as '*' instead.		   |
+|											   |
+|	* Fever!									   |
+|	When player CONSECUTIVELY guesses the correct word without using any 		   |
+|	life for 5 times, the scores that player can get from each correct words 	   |
+|	are multiplied by 2. Once player makes one incorrect guess, spree stops.	   |
+|	When Fever! applies, player can see 'Spree: Yes' from the player status 	   |
+|	description in game.								   |
+|											   |
+|===========================================================================================
+|	<HANGMAN> Game Rule:								   |
+|											   |
+|	We know the rules. Guess the word before the man gets hanged.Pictorial 		   |
+|	representation available. Guess letters and fill the blanks to save the man 	   |
+|	and win the game. The theme of hangman is movies with 3 sub topic to choose from.  |
+|											   |
+============================================================================================
