@@ -19,19 +19,21 @@ char sports[100][100] ={"BASKETBALL", "FOOTBALL", "SOCCER","LACROSSE","HOCKEY","
 char scoreboard[100][100]={};
 string playername;
 
-int gameover(){
+int gameover()
+{
 	
 	int option;
 	
 	ofstream fout("PlayerRecord.txt", ios::app);
-	if (fout.fail()){
+	if (fout.fail())
+	{
 		cout << "Cannot open scoreboard.txt! Exit game......";
 		exit(1);
 	}
 	fout << playername << " " << scoresum << endl;
 	fout.close();
 	
-	system("CLS");
+	cout << "\033[2J\033[1;1H";
 	cout <<"\n\n\n\n\n\n       ==========================================================";
 	cout <<"\n\n                         Game Over!  You Lose!";
 	cout <<"\n\n                          Player name:  "<<playername;
@@ -43,14 +45,16 @@ int gameover(){
 
 }
 
-char ChangePlayerName(){
+char ChangePlayerName()
+{
 	cout << "\n     Please enter your new player name: ";
 	cin >> playername;
 	cout <<"\n    Finised! Press <Enter> to back to menu......\n\n\n\n";
 	system("pause");
 }
 
-char swap(string answer){
+char swap(string answer)
+{
 	
 	char word[answer.size()+1];
 	strcpy(word, answer.c_str());
@@ -77,15 +81,17 @@ char swap(string answer){
 	cout <<"\n\n";
 }
 
-int WordFever(){
+int WordFever()
+{
 	
-
-	system("CLS");
+	
+	cout << "\033[2J\033[1;1H";
 	//generating random answer (FINISHED)
 	srand (time(NULL));
 	numcategory = rand()%2+1;
 	
-	switch(numcategory)	{
+	switch(numcategory)	
+	{
 		case 1:
 			numword = rand()%33;
 			category = "Countries";
@@ -98,14 +104,16 @@ int WordFever(){
 			break;
 		default:
 			cout << "Wrong category!!\n\n\n";
-			getchar();	}
+			getchar();	
+	}
 
-	while (life != 0){	
+	while (life != 0)
+	{	
 		if (spreecount>=5)
 			spree = true; 
 		else 
 			spree = false;
-		system("CLS");
+		cout << "\033[2J\033[1;1H";
 		cout <<"\n\n\n"<<setw(15)<<"Player: "<<playername<<endl;
 		cout <<"\n"<<setw(15)<<"Stage: "<<stage<<setw(50)<<"Score: "<<scoresum<<endl;
 		cout <<"\n"<<setw(15)<<"Life: "<<life<<setw(50)<<"Spree: ";
@@ -124,7 +132,8 @@ int WordFever(){
 		getline(cin, inputans);
 		transform(inputans.begin(), inputans.end(),inputans.begin(), ::toupper);	
 		
-		if (inputans == answer){
+		if (inputans == answer)
+		{
 
 			if (stage<=5)
 				score = 10;
@@ -149,7 +158,8 @@ int WordFever(){
 	}
 }
 
-void hang(char s[][100],int x){
+void hang(char s[][100],int x)
+{
 char al[26];
 char a='A';
 int i;
@@ -308,7 +318,7 @@ cout<<"\t\t     HANGMAN"<<endl
     <<" Choose Genre: ";
 	
 cin>>op;
-system("CLS");
+cout << "\033[2J\033[1;1H";
 	
 switch(op)
 {
@@ -334,14 +344,15 @@ switch(op)
 ct=0;
 }
 
-int WFSetUp(){
+int WFSetUp()
+{
 	
 
 	cout <<"\n\n\n\n\n\n    ========================================================   ";
 	cout << "\n\n\n     Hi! "<<playername<<".\n\n     Are You Ready? \n\n     Press <Enter> key to start!\n\n\n\n";
 	cout <<"\n\n    ========================================================   \n\n\n\n";
 	system("pause");
-	system("CLS");
+	cout << "\033[2J\033[1;1H";
 	
 	//initate game
 	life = 6;
@@ -361,11 +372,12 @@ void EnterPlayerName(){
 
 	cout<<"\n\n\n\n\n\n\n          Hi, Player! \n\n          Please enter your name:  ";
 	cin >> playername;
-	system("CLS");
+	cout << "\033[2J\033[1;1H";
 	
 }
 
-int Op1(){
+int Op1()
+{
 	int option;
 	cout << "\n\n\n\n\n\n\n   ---------------  Game Mode  ---------------  \n\n\n          1.  WordFever!\n\n          2.  HANGMAN\n\n\n";
 	cout << "  ==================================================\n\n";
@@ -373,21 +385,22 @@ int Op1(){
 	cin >> option;
 	switch (option){
 		case 1:
-			system("CLS");
+			cout << "\033[2J\033[1;1H";
 			WFSetUp();
 			break;
 		case 2:
-			system("CLS");
+			cout << "\033[2J\033[1;1H";
 			HMSetUp();
 			break;
 		default:
-			system("CLS");
+			cout << "\033[2J\033[1;1H";
 			cout << "Unknown command. Exiting game...";
 			exit(1);
 	}
 }
 
-int GameRule(){
+int GameRule()
+{
 	
 	string rule;
 	
@@ -416,7 +429,7 @@ int ScoreBoard(){
 	int i = 0;
 	int score, tempscore;
 
-	system("CLS");
+	cout << "\033[2J\033[1;1H";
 	ifstream fin("PlayerRecord.txt");
 	if (fin.fail()){
 		cout << "\n\n    No record! Back to menu..";
@@ -444,7 +457,8 @@ int ScoreBoard(){
 
 	cout << "\n\n"<<setw(10)<<"Name"<<setw(22)<<"Score\n";
 	cout << "    =======================================\n";
-	for (int i=0;i<recordnum;i++){
+	for (int i=0;i<recordnum;i++)
+	{
 		cout << setw(10)<< namelist[i]<<" "<<setw(20)<<scorelist[i] <<"\n\n";
 	}	
 	cout << "    =======================================\n";
@@ -455,7 +469,8 @@ int ScoreBoard(){
 
 }
 
-void Menu(){
+void Menu()
+{
 	int option;
 	cout <<"\n\n\n     Hi, " << playername <<".\n    ==========================================================\n\n";
 	cout <<"     1. Start Game\n"<<endl;
@@ -466,26 +481,27 @@ void Menu(){
 	cout <<" \n    ==========================================================\n\n    Please enter your choice: " ;
 	cin >> option;
 	
-	system("CLS");
-	switch (option){
+	cout << "\033[2J\033[1;1H";
+	switch (option)
+	{
 		case 9:
 			back = 2;
 			break;
 		case 1:
-			system("CLS"); 
+			cout << "\033[2J\033[1;1H";
 			Op1();
 			break;
 		case 2:
-			system("CLS");
+			cout << "\033[2J\033[1;1H";
 			ScoreBoard();
 			break;
 		case 3:
-			system("CLS");
+			cout << "\033[2J\033[1;1H";
 			GameRule();
 			break;
 		case 4:
 			int settingOption;
-			system ("CLS");
+			cout << "\033[2J\033[1;1H";
 			cout << "\n\n\n   =========================================\n";
 			cout << "   |                                       |\n";
 			cout << "   |  Setting:                             |\n";
@@ -517,11 +533,12 @@ void Menu(){
 }
 }
 
-int Begining(){
+int Begining()
+{
 	cout <<"\n\n\n\n"<<"      ------------  ENGG1340 Course Project  ------------ \n\n\n\n\n         Developed by:\n";
 	cout <<"\n            CHOI CHIN KIU      (3035557351)\n\n            DEV CHORADIA MANOJ (3035666669)\n\n\n\n\n\n         Press <ENTER> key to continue...... \n\n\n\n";
 	system("pause");
-	system("CLS");
+	cout << "\033[2J\033[1;1H";
 }
 
 int main(){
@@ -529,11 +546,11 @@ int main(){
 	EnterPlayerName();
 	Menu();
 	while (back == 1){
-		system("CLS");
+		cout << "\033[2J\033[1;1H";
 		Menu();
 	}
 	if (back == 2)
-		system("CLS");
+		cout << "\033[2J\033[1;1H";
 		cout << "\n\n\n\n\n\n\n                         Thanks for playing!"<<"\n\n                               Goodbye!\n\n";
 		exit(0);
 
