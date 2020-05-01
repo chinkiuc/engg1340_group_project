@@ -305,7 +305,8 @@ else
 }
 }
 
-int HMSetUp(){
+int HMSetUp()
+{
     int x,op;
 char e[100][100]={"AVENGERS","MISSION IMPOSSIBLE","HARRY POTTER","DARK KNIGHT","INCEPTION","CONJURING","THE MATRIX","TERMINATOR","TRANSOFRMERS","DIE HARD","SKYFALL","CASINO ROYALE","EXORCIST","SPEED","BLACK PANTHER","FAST AND FURIOUS","JOHN WICK","INSIDIOUS"};
 char t[100][100]={"COCO","INSIDE OUT","MOANA","TOY STORY","INCREDIBLES","ZOOTOPIA","FROZEN","FINDING DORY","BIG HERO","RATATOUILE","DESPICABLE ME"};
@@ -367,7 +368,8 @@ int WFSetUp()
 	
 }
 
-void EnterPlayerName(){
+void EnterPlayerName()
+{
 	
 
 	cout<<"\n\n\n\n\n\n\n          Hi, Player! \n\n          Please enter your name:  ";
@@ -399,139 +401,7 @@ int Op1()
 	}
 }
 
-int GameRule()
-{
-	
-	string rule;
-	
-	ifstream fin("gamerule.txt");
-	if (fin.fail()){
-		cout << "Cannot open gamerule.txt! Exit game......";
-		exit(1);
-	}
-	
-	while (getline(fin, rule)){
-		cout << rule << endl;
-	}
-	fin.close();
-	cout << "  Press <Enter> to back to menu...\n\n";
-	system("pause");
-	
-	back = 1;
-	
-}
 
-int ScoreBoard(){
-	
-	string namelist[100] = {};
-	int scorelist[100] = {};
-	string name, tempname;
-	int i = 0;
-	int score, tempscore;
-
-	cout << "\033[2J\033[1;1H";
-	ifstream fin("PlayerRecord.txt");
-	if (fin.fail()){
-		cout << "\n\n    No record! Back to menu..";
-		back = 1;
-	}
-	while (fin >> name >> score){
-		namelist[i]=name;
-		scorelist[i]=score;
-		i+=1;
-	}
-	
-	int recordnum =i;
-	for (int i=0; i<recordnum;i++){
-		for (int j=0; j<recordnum;j++){
-			if (scorelist[i]>scorelist[j]){
-				tempname = namelist[i];
-				namelist[i] = namelist[j];
-				namelist[j] = tempname;
-				tempscore = scorelist[i];
-				scorelist[i] = scorelist[j];
-				scorelist[j] = tempscore;				
-			}
-		}
-	}
-
-	cout << "\n\n"<<setw(10)<<"Name"<<setw(22)<<"Score\n";
-	cout << "    =======================================\n";
-	for (int i=0;i<recordnum;i++)
-	{
-		cout << setw(10)<< namelist[i]<<" "<<setw(20)<<scorelist[i] <<"\n\n";
-	}	
-	cout << "    =======================================\n";
-	cout <<"    Press <Enter> to back to menu......\n\n";
-	back = 1;
-	system("pause");
-	
-
-}
-
-void Menu()
-{
-	int option;
-	cout <<"\n\n\n     Hi, " << playername <<".\n    ==========================================================\n\n";
-	cout <<"     1. Start Game\n"<<endl;
-	cout <<"     2. Scoreboard\n"<<endl;
-	cout <<"     3. How to play\n"<<endl;
-	cout <<"     4. Setting\n"<<endl;
-	cout <<"\n     9. Exit.\n";
-	cout <<" \n    ==========================================================\n\n    Please enter your choice: " ;
-	cin >> option;
-	
-	cout << "\033[2J\033[1;1H";
-	switch (option)
-	{
-		case 9:
-			back = 2;
-			break;
-		case 1:
-			cout << "\033[2J\033[1;1H";
-			Op1();
-			break;
-		case 2:
-			cout << "\033[2J\033[1;1H";
-			ScoreBoard();
-			break;
-		case 3:
-			cout << "\033[2J\033[1;1H";
-			GameRule();
-			break;
-		case 4:
-			int settingOption;
-			cout << "\033[2J\033[1;1H";
-			cout << "\n\n\n   =========================================\n";
-			cout << "   |                                       |\n";
-			cout << "   |  Setting:                             |\n";
-			cout << "   =========================================\n";
-			cout << "   |                                       |\n";			
-			cout << "   |  1. Change player name                |\n";
-			cout << "   |                                       |\n";
-			cout << "   |  2. Clear scoreboard                  |\n";
-			cout << "   |                                       |\n";
-			cout << "   |  0. Back to menu                      |\n";	
-			cout << "   |                                       |\n";	
-			cout << "   =========================================\n";
-			cout << "\n   : ";
-			cin >> settingOption;
-			back = 1;
-			
-			switch (settingOption){
-				case 1:
-					ChangePlayerName();
-					break;
-				case 2:
-					remove("PlayerRecord.txt");
-					cout <<"\n    Finised! Press <Enter> to back to menu......\n\n\n\n";
-					system("pause");
-					break;
-				case 0:
-					break;
-			}
-}
-}
 
 int Begining()
 {
