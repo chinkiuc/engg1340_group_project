@@ -55,8 +55,8 @@ char ChangePlayerName()
 
 char swap(string answer)
 {
-	
-	char word[answer.size()+1];
+	const int n = answer.size()+1;
+	char word[100];
 	strcpy(word, answer.c_str());
 	char TEMP;
 	int wordnum = strlen(word)-1;
