@@ -18,7 +18,337 @@ char country[100][100] ={"CHINA", "THE UNITED STATES","JAPAN","TAIWAN","HONG KON
 char sports[100][100] ={"BASKETBALL", "FOOTBALL", "SOCCER","LACROSSE","HOCKEY","TENNIS","VOLLEYBALL","TABLE TENNIS","BASEBALL","RUGBY","GOLF"};
 char scoreboard[100][100]={};
 string playername;
-
+int i,a,t,g,n=0,displayedX[9],displayed[9],displayedO[9];
+char A[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
+void grid()
+{
+ if(n!=0)
+ {
+  char ch;
+  if(i%2==0)
+   ch=ch1;
+  else
+   ch=ch2;
+  A[n-1]=ch;
+ }
+ for(int h=0;h<9;h+=3)
+ {
+  cout<<endl<<"   |   |"<<endl;
+  cout<<" "<<A[h]<<" | "<<A[h+1]<<" | "<<A[h+2]<<endl;
+  cout<<"   |   |"<<endl;
+  if(h<6)
+   for(int y=0;y<11;y++)
+    cout<<"-";
+ }
+}
+void done()
+{
+ a=t=g=0;
+ for(int s=0;s<9;s++)
+  if(A[s]>57 || A[s]<49)
+  {
+   displayed[a++]=s+1;
+   if(A[s]!='O')
+    displayedX[t++]=s+1;
+   else
+    displayedO[g++]=s+1;
+  }
+}
+void choose()
+{
+ done();
+ int p,q,ans=0,one=0,two=0,y,z;
+ start:
+ for( y=0;y<g;y++)
+ {
+  for( z=0;z<g;z++)
+   {
+    p=displayedO[y];
+    q=displayedO[z];
+    if(p==one && q==two)
+     continue;
+    if(p==1 && q==2)
+     ans=3;
+    else if(p==1 && q==3)
+     ans=2;
+    else if(p==2 && q==3)
+     ans=1;
+    else if(p==1 && q==5)
+     ans=9;
+    else if(p==1 && q==9)
+     ans=5;
+    else if(p==5 && q==9)
+     ans=1;
+    else if(p==1 && q==4)
+     ans=7;
+    else if(p==1 && q==7)
+     ans=4;
+    else if(p==4 && q==7)
+     ans=1;
+    else if(p==2 && q==5)
+     ans=8;
+    else if(p==8 && q==2)
+     ans=5;
+    else if(p==5 && q==8)
+     ans=2;
+    else if(p==3 && q==6)
+     ans=9;
+    else if(p==6 && q==9)
+     ans=3;
+    else if(p==3 && q==9)
+     ans=6;
+    else if(p==4 && q==6)
+     ans=5;
+    else if(p==4 && q==5)
+     ans=6;
+    else if(p==5 && q==6)
+     ans=4;
+    else if(p==7 && q==8)
+     ans=9;
+    else if(p==7 && q==9)
+     ans=8;
+    else if(p==8 && q==9)
+     ans=7;
+    else if(p==3 && q==5)
+     ans=7;
+    else if(p==5 && q==7)
+     ans=3;
+    else if(p==3 && q==7)
+     ans=5;
+   }
+  if(ans)
+   goto imdone;
+ }
+ for(y=0;y<t;y++)
+ {
+  for(int z=0;z<t;z++)
+   {
+    p=displayedX[y];
+    q=displayedX[z];
+    if(p==one && q==two)
+     continue;
+    if(p==1 && q==2)
+     ans=3;
+    else if(p==1 && q==3)
+     ans=2;
+    else if(p==2 && q==3)
+     ans=1;
+    else if(p==1 && q==5)
+     ans=9;
+    else if(p==1 && q==9)
+     ans=5;
+    else if(p==5 && q==9)
+     ans=1;
+    else if(p==1 && q==4)
+     ans=7;
+    else if(p==1 && q==7)
+     ans=4;
+    else if(p==4 && q==7)
+     ans=1;
+    else if(p==2 && q==5)
+     ans=8;
+    else if(p==8 && q==2)
+     ans=5;
+    else if(p==5 && q==8)
+     ans=2;
+    else if(p==3 && q==6)
+     ans=9;
+    else if(p==6 && q==9)
+     ans=3;
+    else if(p==3 && q==9)
+     ans=6;
+    else if(p==4 && q==6)
+     ans=5;
+    else if(p==4 && q==5)
+     ans=6;
+    else if(p==5 && q==6)
+     ans=4;
+    else if(p==7 && q==8)
+     ans=9;
+    else if(p==7 && q==9)
+     ans=8;
+    else if(p==8 && q==9)
+     ans=7;
+    else if(p==3 && q==5)
+     ans=7;
+    else if(p==5 && q==7)
+     ans=3;
+    else if(p==3 && q==7)
+     ans=5;
+   }
+   if(ans)
+    goto imdone;
+  }
+ ans=rand()%9+1;
+ imdone:
+ n=ans;
+ int u;
+ for( u=0;u<a;u++)
+  if(n==displayed[u])
+   break;
+ if(u<a)
+ {
+  ans=0;
+  one=p;
+  two=q;
+  goto start;
+ }
+}
+int win()
+{
+ if((A[0]==A[1] && A[1]==A[2])||(A[0]==A[4] && A[4]==A[8]) ||(A[0]==A[3] && A[3]==A[6]) ||(A[1]==A[4] && A[4]==A[7]) ||(A[2]==A[5] && A[5]==A[8]) ||(A[4]==A[3] && A[3]==A[5]) ||(A[6]==A[7] && A[8]==A[6]) || (A[2]==A[4] && A[6]==A[4]))
+  return 1;
+ else
+  return 0;
+}
+void check()
+{
+ int op;
+ do
+ {
+  op=0;
+  cout<<"\nEnter place: ";
+  cin>>n;
+  done();
+  if(n<1 || n>9)
+  {
+   cout<<"Error.\n";
+   op=1;
+  }
+  for(int v=0;v<a;v++)
+   if(n==displayed[v])
+   {
+    cout<<"Error.\n";
+    op=1;
+   }
+ }while(op);
+}
+void hard()
+{
+ cout << "\033[2J\033[1;1H";
+ cout<<"\nHard Level\n..........\n";
+ grid();
+ for(i=0;i<9;i++)
+ {
+  if(win())
+  {
+   cout<<"\nComputer Wins!!";
+   break;
+  }
+  check();cout << "\033[2J\033[1;1H";
+  cout<<"\nHard Level\n..........\n\n";
+  grid();
+  i++;
+  if(win())
+  {
+   cout<<"\nPlayer Wins!!";
+   break;
+  }
+  choose();cout << "\033[2J\033[1;1H";
+  cout<<"\nHard Level\n..........\n";
+  grid();
+ }
+ if(i>=9)
+  cout<<"\n\nDraw!";
+}
+void Double()
+{
+ cout << "\033[2J\033[1;1H";
+ cout<<"\nDouble Player\n..............\n";
+ grid();
+ cout<<"\nPlayer 1:- X \nPlayer 2:- O\n";
+ for(i=0;i<9;i++)
+ {
+  cout<<"\nPlayer "<<i%2+1<<" :\n";
+  check();
+  cout << "\033[2J\033[1;1H";
+  cout<<"\nDouble Player\n.............\n";
+  grid();
+  if(win())
+  {
+   cout<<"\nPlayer "<<i%2+1<<" Wins!!";
+   break;
+  }
+ }
+ if(i>=9)
+  cout<<"\nDraw!!";
+}
+void easy()
+{
+ cout << "\033[2J\033[1;1H";
+ cout<<"\nEasy Level\n..........\n";
+ grid();
+ for(i=0;i<9;i++)
+ {
+     check();
+  cout << "\033[2J\033[1;1H";
+  cout<<"\nEasy Level\n..........\n";
+  grid();
+  if(win())
+  {
+   cout<<"\nPlayer Wins!!";
+   break;
+  }
+  done();
+  mychance:
+  n=rand()%9+1;
+  int o;
+  for(o=0;o<a;o++)
+   if(n==displayed[o])
+    break;
+  if(o<a)
+   goto mychance;
+  i++;
+  cout << "\033[2J\033[1;1H";
+  cout<<"\nEasy Level\n..........\n";
+  grid();
+  if(win())
+  {
+   cout<<"\nComputer Wins!!";
+   break;
+  }
+ }
+}
+int tictactoe()
+{
+    cout << "\033[2J\033[1;1H";
+ cout<<"\nTIC TAC TOE\n...........\n\n";
+ cout<<"1) Single Player\n2) Double Player\n\n";
+ int ans;
+ int w;
+ do
+ {
+  cout<<"Enter option: ";
+  cin>>ans;
+  w=0;
+  if(ans<1 || ans >2)
+  {
+   cout<<"Error.\n";
+   w=1;
+  }
+ }while(w);
+ if(ans==1)
+ {
+  cout<<"\n1) Easy\n2) Hard\n\n";
+  do
+  {
+   cout<<"Enter option: ";
+   cin>>ans;
+   w=0;
+   if(ans<1 || ans >2)
+   {
+    cout<<"Error.\n";
+    w=1;
+   }
+  }while(w);
+  if(ans==1)
+   easy();
+  else
+   hard();
+ }
+ else
+  Double();
+}
 int gameover()
 {
 	
@@ -381,7 +711,7 @@ void EnterPlayerName()
 int Op1()
 {
 	int option;
-	cout << "\n\n\n\n\n\n\n   ---------------  Game Mode  ---------------  \n\n\n          1.  WordFever!\n\n          2.  HANGMAN\n\n\n";
+	cout << "\n\n\n\n\n\n\n   ---------------  Game Mode  ---------------  \n\n\n          1.  WordFever!\n\n          2.  HANGMAN\n\n          3. TicTacToe(Single and double player)\n\n\n";
 	cout << "  ==================================================\n\n";
 	cout << "   Select game mode: ";
 	cin >> option;
@@ -394,6 +724,9 @@ int Op1()
 			cout << "\033[2J\033[1;1H";
 			HMSetUp();
 			break;
+		case 3:
+			cout << "\033[2J\033[1;1H";
+			tictactoe();
 		default:
 			cout << "\033[2J\033[1;1H";
 			cout << "Unknown command. Exiting game...";
@@ -557,7 +890,8 @@ int main(){
 	}
 	if (back == 2)
 		cout << "\033[2J\033[1;1H";
-		cout << "\n\n\n\n\n\n\n                         Thanks for playing!"<<"\n\n                               Goodbye!\n\n";
+		cout << "\n\n\n\n\n\n\n                         Thanks for playing!"<<"\n\n                           Goodbye!\n\n";
 		exit(0);
 
 }
+
