@@ -36,6 +36,9 @@ Guess the word before the man gets hanged.Pictorial representation available.
 Guess letters and fill the blanks to save the man and win the game.
 The theme of hangman is movies with 3 sub topic to choose from.
 
+-- The third game is single and multiplayer Tic Tac Toe
+3 in a row to win with easy and hard levels to choose from!!
+
 # Features 
 
 This is a text-guessing game added with different features and functions:
