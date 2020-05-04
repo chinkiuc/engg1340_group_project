@@ -393,6 +393,10 @@ char ChangePlayerName()
 	system("pause");
 }
 
+//Accecpting answer string, 
+//Then use rand() + for loop to swap the letters in random order
+//Using rand() + for loop to prevent duplication from rand() function
+//Print the swapped letters in game with spacing & formatting
 char swap(string answer)
 {
 	const int n = answer.size()+1;
@@ -421,6 +425,9 @@ char swap(string answer)
 	cout <<"\n\n";
 }
 
+//Game1 (WordFever!)'s main code
+//using rand() to generate random answer
+//calculating score
 int WordFever()
 {
 	
@@ -708,6 +715,7 @@ int WFSetUp()
 	
 }
 
+//Accept playername from user input
 void EnterPlayerName()
 {
 	
@@ -718,6 +726,8 @@ void EnterPlayerName()
 	
 }
 
+//Option 1 from menu
+//choosing game1/2/3
 int Op1()
 {
 	int option;
@@ -744,7 +754,8 @@ int Op1()
 	}
 }
 
-//game rules
+//reading gamerules from gamerule.txt
+//printing the content of gamerules 
 int GameRule()
 {
 	
@@ -766,7 +777,7 @@ int GameRule()
 	back = 1;
 	
 }
-//score board for Game fever
+//score board for Game WordFever!
 int ScoreBoard()
 {
 	
@@ -880,8 +891,8 @@ void Menu()
 }
 }
 
-//Before the main menu
-
+//The begining of the program
+//Displaying project name and developers
 int Begining()
 {
 	cout <<"\n\n\n\n"<<"      ------------  ENGG1340 Course Project  ------------ \n\n\n\n\n         Developed by:\n";
