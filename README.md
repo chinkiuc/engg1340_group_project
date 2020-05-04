@@ -53,17 +53,15 @@ This is a text-guessing game added with different features and functions:
 
 # Requirements 
 1. Generation of random game sets or events
-  - using rand() to generate random answer
-  - using rand() to swap letters in random order
+      - using rand() to generate random answer
+      - using rand() to swap letters in random order
 2. Data structures for storing game status
 3. Dynamic memory management
-4. File input/output (e.g., for loading/saving game status)
-  - Score board
-  - game rules
+4. File input/output 
+      - Score board
+      - game rules
 5. Program codes in multiple files
 6. Proper indentation and naming styles
-  - varibles are named with clear instructions 
-  (e.g. back: flag of going back to main menu
-        life: for the life of player
-        sports/ countries: array of storing words in different categories)
+      - varibles are named with clear instructions 
+      (e.g. back: flag of going back to main menu,  life: for the life of player,  sports/ countries: array of storing words in different categories)
 7. In-code documentation
