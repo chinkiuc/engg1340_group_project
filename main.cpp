@@ -20,6 +20,7 @@ char scoreboard[100][100]={};
 string playername;
 int i,a,t,g,n=0,displayedX[9],displayed[9],displayedO[9];
 char A[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
+//grid() is for tictactoe game and is used for the screen display
 void grid()
 {
  if(n!=0)
@@ -41,6 +42,7 @@ void grid()
     cout<<"-";
  }
 }
+// done() is for tictactoe game to input numbers from 1-9 (49 and 57 are ascii values)
 void done()
 {
  a=t=g=0;
@@ -54,6 +56,7 @@ void done()
     displayedO[g++]=s+1;
   }
 }
+//choose() is for tictactoe is the main game code
 void choose()
 {
  done();
@@ -194,6 +197,7 @@ void choose()
   goto start;
  }
 }
+//win() is for tictactoe to declare winner
 int win()
 {
  if((A[0]==A[1] && A[1]==A[2])||(A[0]==A[4] && A[4]==A[8]) ||(A[0]==A[3] && A[3]==A[6]) ||(A[1]==A[4] && A[4]==A[7]) ||(A[2]==A[5] && A[5]==A[8]) ||(A[4]==A[3] && A[3]==A[5]) ||(A[6]==A[7] && A[8]==A[6]) || (A[2]==A[4] && A[6]==A[4]))
@@ -201,6 +205,7 @@ int win()
  else
   return 0;
 }
+//check() is for checking valid input
 void check()
 {
  int op;
@@ -223,6 +228,7 @@ void check()
    }
  }while(op);
 }
+//hard() is for hard level in single player tictactoe
 void hard()
 {
  cout << "\033[2J\033[1;1H";
@@ -251,6 +257,7 @@ void hard()
  if(i>=9)
   cout<<"\n\nDraw!";
 }
+// double player part of the game
 void Double()
 {
  cout << "\033[2J\033[1;1H";
@@ -273,6 +280,7 @@ void Double()
  if(i>=9)
   cout<<"\nDraw!!";
 }
+// easy() is for single player in tictactoe
 void easy()
 {
  cout << "\033[2J\033[1;1H";
@@ -309,6 +317,7 @@ void easy()
   }
  }
 }
+// combinging all previous functions in order to run the game
 int tictactoe()
 {
     cout << "\033[2J\033[1;1H";
@@ -349,6 +358,7 @@ int tictactoe()
  else
   Double();
 }
+// end of game output
 int gameover()
 {
 	
@@ -374,7 +384,7 @@ int gameover()
 	cin >> back;
 
 }
-
+// change the name of the player
 char ChangePlayerName()
 {
 	cout << "\n     Please enter your new player name: ";
@@ -487,7 +497,7 @@ int WordFever()
 		}
 	}
 }
-
+// hangman code
 void hang(char s[][100],int x)
 {
 char al[26];
@@ -634,7 +644,7 @@ else
   cin >> back;
 }
 }
-
+// hangman main set up
 int HMSetUp()
 {
     int x,op;
@@ -674,7 +684,7 @@ switch(op)
 }
 ct=0;
 }
-
+// wordfever main set up
 int WFSetUp()
 {
 	
@@ -734,7 +744,7 @@ int Op1()
 	}
 }
 
-
+//game rules
 int GameRule()
 {
 	
@@ -756,7 +766,7 @@ int GameRule()
 	back = 1;
 	
 }
-
+//score board for Game fever
 int ScoreBoard()
 {
 	
@@ -805,13 +815,13 @@ int ScoreBoard()
 	
 
 }
-
+//main Menu
 void Menu()
 {
 	int option;
 	cout <<"\n\n\n     Hi, " << playername <<".\n    ==========================================================\n\n";
 	cout <<"     1. Start Game\n"<<endl;
-	cout <<"     2. Scoreboard\n"<<endl;
+	cout <<"     2. Scoreboard for Game Fever\n"<<endl;
 	cout <<"     3. How to play\n"<<endl;
 	cout <<"     4. Setting\n"<<endl;
 	cout <<"\n     9. Exit.\n";
@@ -870,7 +880,7 @@ void Menu()
 }
 }
 
-
+//Before the main menu
 
 int Begining()
 {
@@ -880,6 +890,7 @@ int Begining()
 	cout << "\033[2J\033[1;1H";
 }
 
+// main function
 int main(){
 	Begining();
 	EnterPlayerName();
