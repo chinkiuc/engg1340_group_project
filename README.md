@@ -53,16 +53,22 @@ This is a text-guessing game added with different features and functions:
 
 # Requirements 
 1. Generation of random game sets or events
+
       :white_check_mark: using rand() to generate random answer
+
       :white_check_mark: using rand() to swap letters in random order
 2. Data structures for storing game status
 3. Dynamic memory management
+      
       :white_check_mark: Dynamic array of char in swap() for storing swapped letters
 4. File input/output 
+      
       :white_check_mark: Score board
+      
       :white_check_mark: game rules
 5. Program codes in multiple files
 6. Proper indentation and naming styles
+      
       :white_check_mark: varibles are named with clear instructions 
       (e.g. back: flag of going back to main menu,  life: for the life of player,  sports/ countries: array of storing words in different categories)
 7. In-code documentation
