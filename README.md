@@ -66,9 +66,9 @@ This is a text-guessing game added with different features and functions:
       :white_check_mark: Score board
       
       :white_check_mark: game rules
-5. Program codes in multiple files
+5. Program codes in multiple files :white_check_mark:
 6. Proper indentation and naming styles
       
       :white_check_mark: varibles are named with clear instructions 
       (e.g. back: flag of going back to main menu,  life: for the life of player,  sports/ countries: array of storing words in different categories)
-7. In-code documentation
+7. In-code documentation :white_check_mark:
