@@ -17,7 +17,7 @@ The user gets to choose what he/she wishes to play.
 
 The game is a Single Player game where a player has to guess a certain word in the game within a limited number of guesses. As a player makes a wrong guess the life of the player get deduced. Player can continue guessing until the life is used up. Everytime when player guess the correct word successfully, the life of player restores.
 
-*:white_check_mark:Scoring*
+*:warning:Scoring*
 
 When player answers the correct word, player gets scores.
 For stage 1-5, player get 10 scores for each word.
@@ -25,7 +25,7 @@ For stage 6-10, player get 50 scores for each word.
 For stage 11-20, player get 100 scores for each word.
 For stage more than 20, player get 250 scores for each word.
 
-*:white_check_mark:Spree*
+*:warning:Spree*
 
 When player CONSECUTIVELY guess the correct word without using any life for 5 times, the scores that player can get from each correct words are multiplied by 2. Once player makes one incorrect guess, spree stops.
 
@@ -53,16 +53,16 @@ This is a text-guessing game added with different features and functions:
 
 # Requirements 
 1. Generation of random game sets or events
-      - using rand() to generate random answer
-      - using rand() to swap letters in random order
+      :white_check_mark: using rand() to generate random answer
+      :white_check_mark: using rand() to swap letters in random order
 2. Data structures for storing game status
 3. Dynamic memory management
-      - Dynamic array of char in swap() for storing swapped letters
+      :white_check_mark: Dynamic array of char in swap() for storing swapped letters
 4. File input/output 
-      - Score board
-      - game rules
+      :white_check_mark: Score board
+      :white_check_mark: game rules
 5. Program codes in multiple files
 6. Proper indentation and naming styles
-      - varibles are named with clear instructions 
+      :white_check_mark: varibles are named with clear instructions 
       (e.g. back: flag of going back to main menu,  life: for the life of player,  sports/ countries: array of storing words in different categories)
 7. In-code documentation
