@@ -13,7 +13,7 @@ using namespace std;
 char swap(string answer)
 {
 	const int n = answer.size()+1;
-	char word[100];
+	char *word = new char[100];
 	strcpy(word, answer.c_str());
 	char TEMP;
 	int wordnum = strlen(word)-1;
@@ -33,4 +33,5 @@ char swap(string answer)
 		else 
 			cout << word[i] << "  ";}
 	cout <<"\n\n";
+	delete[] word;
 }
