@@ -57,6 +57,7 @@ This is a text-guessing game added with different features and functions:
       - using rand() to swap letters in random order
 2. Data structures for storing game status
 3. Dynamic memory management
+      - Dynamic array of char in swap() for storing swapped letters
 4. File input/output 
       - Score board
       - game rules
