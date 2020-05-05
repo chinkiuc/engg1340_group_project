@@ -18,309 +18,31 @@ char country[100][100] ={"CHINA", "THE UNITED STATES","JAPAN","TAIWAN","HONG KON
 char sports[100][100] ={"BASKETBALL", "FOOTBALL", "SOCCER","LACROSSE","HOCKEY","TENNIS","VOLLEYBALL","TABLE TENNIS","BASEBALL","RUGBY","GOLF"};
 char scoreboard[100][100]={};
 string playername;
-int i,a,t,g,n=0,displayedX[9],displayed[9],displayedO[9];
-char A[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
-//grid() is for tictactoe game and is used for the screen display
-void grid()
-{
- if(n!=0)
- {
-  char ch;
-  if(i%2==0)
-   ch=ch1;
-  else
-   ch=ch2;
-  A[n-1]=ch;
- }
- for(int h=0;h<9;h+=3)
- {
-  cout<<endl<<"   |   |"<<endl;
-  cout<<" "<<A[h]<<" | "<<A[h+1]<<" | "<<A[h+2]<<endl;
-  cout<<"   |   |"<<endl;
-  if(h<6)
-   for(int y=0;y<11;y++)
-    cout<<"-";
- }
-}
-// done() is for tictactoe game to input numbers from 1-9 (49 and 57 are ascii values)
-void done()
-{
- a=t=g=0;
- for(int s=0;s<9;s++)
-  if(A[s]>57 || A[s]<49)
-  {
-   displayed[a++]=s+1;
-   if(A[s]!='O')
-    displayedX[t++]=s+1;
-   else
-    displayedO[g++]=s+1;
-  }
-}
-//choose() is for tictactoe is the main game code
-void choose()
-{
- done();
- int p,q,ans=0,one=0,two=0,y,z;
- start:
- for( y=0;y<g;y++)
- {
-  for( z=0;z<g;z++)
-   {
-    p=displayedO[y];
-    q=displayedO[z];
-    if(p==one && q==two)
-     continue;
-    if(p==1 && q==2)
-     ans=3;
-    else if(p==1 && q==3)
-     ans=2;
-    else if(p==2 && q==3)
-     ans=1;
-    else if(p==1 && q==5)
-     ans=9;
-    else if(p==1 && q==9)
-     ans=5;
-    else if(p==5 && q==9)
-     ans=1;
-    else if(p==1 && q==4)
-     ans=7;
-    else if(p==1 && q==7)
-     ans=4;
-    else if(p==4 && q==7)
-     ans=1;
-    else if(p==2 && q==5)
-     ans=8;
-    else if(p==8 && q==2)
-     ans=5;
-    else if(p==5 && q==8)
-     ans=2;
-    else if(p==3 && q==6)
-     ans=9;
-    else if(p==6 && q==9)
-     ans=3;
-    else if(p==3 && q==9)
-     ans=6;
-    else if(p==4 && q==6)
-     ans=5;
-    else if(p==4 && q==5)
-     ans=6;
-    else if(p==5 && q==6)
-     ans=4;
-    else if(p==7 && q==8)
-     ans=9;
-    else if(p==7 && q==9)
-     ans=8;
-    else if(p==8 && q==9)
-     ans=7;
-    else if(p==3 && q==5)
-     ans=7;
-    else if(p==5 && q==7)
-     ans=3;
-    else if(p==3 && q==7)
-     ans=5;
-   }
-  if(ans)
-   goto imdone;
- }
- for(y=0;y<t;y++)
- {
-  for(int z=0;z<t;z++)
-   {
-    p=displayedX[y];
-    q=displayedX[z];
-    if(p==one && q==two)
-     continue;
-    if(p==1 && q==2)
-     ans=3;
-    else if(p==1 && q==3)
-     ans=2;
-    else if(p==2 && q==3)
-     ans=1;
-    else if(p==1 && q==5)
-     ans=9;
-    else if(p==1 && q==9)
-     ans=5;
-    else if(p==5 && q==9)
-     ans=1;
-    else if(p==1 && q==4)
-     ans=7;
-    else if(p==1 && q==7)
-     ans=4;
-    else if(p==4 && q==7)
-     ans=1;
-    else if(p==2 && q==5)
-     ans=8;
-    else if(p==8 && q==2)
-     ans=5;
-    else if(p==5 && q==8)
-     ans=2;
-    else if(p==3 && q==6)
-     ans=9;
-    else if(p==6 && q==9)
-     ans=3;
-    else if(p==3 && q==9)
-     ans=6;
-    else if(p==4 && q==6)
-     ans=5;
-    else if(p==4 && q==5)
-     ans=6;
-    else if(p==5 && q==6)
-     ans=4;
-    else if(p==7 && q==8)
-     ans=9;
-    else if(p==7 && q==9)
-     ans=8;
-    else if(p==8 && q==9)
-     ans=7;
-    else if(p==3 && q==5)
-     ans=7;
-    else if(p==5 && q==7)
-     ans=3;
-    else if(p==3 && q==7)
-     ans=5;
-   }
-   if(ans)
-    goto imdone;
-  }
- ans=rand()%9+1;
- imdone:
- n=ans;
- int u;
- for( u=0;u<a;u++)
-  if(n==displayed[u])
-   break;
- if(u<a)
- {
-  ans=0;
-  one=p;
-  two=q;
-  goto start;
- }
-}
-//win() is for tictactoe to declare winner
-int win()
-{
- if((A[0]==A[1] && A[1]==A[2])||(A[0]==A[4] && A[4]==A[8]) ||(A[0]==A[3] && A[3]==A[6]) ||(A[1]==A[4] && A[4]==A[7]) ||(A[2]==A[5] && A[5]==A[8]) ||(A[4]==A[3] && A[3]==A[5]) ||(A[6]==A[7] && A[8]==A[6]) || (A[2]==A[4] && A[6]==A[4]))
-  return 1;
- else
-  return 0;
-}
-//check() is for checking valid input
-void check()
-{
- int op;
- do
- {
-  op=0;
-  cout<<"\nEnter place: ";
-  cin>>n;
-  done();
-  if(n<1 || n>9)
-  {
-   cout<<"Error.\n";
-   op=1;
-  }
-  for(int v=0;v<a;v++)
-   if(n==displayed[v])
-   {
-    cout<<"Error.\n";
-    op=1;
-   }
- }while(op);
-}
-//hard() is for hard level in single player tictactoe
-void hard()
-{
- cout << "\033[2J\033[1;1H";
- cout<<"\nHard Level\n..........\n";
- grid();
- for(i=0;i<9;i++)
- {
-  if(win())
-  {
-   cout<<"\nComputer Wins!!";
-   break;
-  }
-  check();cout << "\033[2J\033[1;1H";
-  cout<<"\nHard Level\n..........\n\n";
-  grid();
-  i++;
-  if(win())
-  {
-   cout<<"\nPlayer Wins!!";
-   break;
-  }
-  choose();cout << "\033[2J\033[1;1H";
-  cout<<"\nHard Level\n..........\n";
-  grid();
- }
- if(i>=9)
-  cout<<"\n\nDraw!";
-}
-// double player part of the game
-void Double()
-{
- cout << "\033[2J\033[1;1H";
- cout<<"\nDouble Player\n..............\n";
- grid();
- cout<<"\nPlayer 1:- X \nPlayer 2:- O\n";
- for(i=0;i<9;i++)
- {
-  cout<<"\nPlayer "<<i%2+1<<" :\n";
-  check();
-  cout << "\033[2J\033[1;1H";
-  cout<<"\nDouble Player\n.............\n";
-  grid();
-  if(win())
-  {
-   cout<<"\nPlayer "<<i%2+1<<" Wins!!";
-   break;
-  }
- }
- if(i>=9)
-  cout<<"\nDraw!!";
-}
-// easy() is for single player in tictactoe
-void easy()
-{
- cout << "\033[2J\033[1;1H";
- cout<<"\nEasy Level\n..........\n";
- grid();
- for(i=0;i<9;i++)
- {
-     check();
-  cout << "\033[2J\033[1;1H";
-  cout<<"\nEasy Level\n..........\n";
-  grid();
-  if(win())
-  {
-   cout<<"\nPlayer Wins!!";
-   break;
-  }
-  done();
-  mychance:
-  n=rand()%9+1;
-  int o;
-  for(o=0;o<a;o++)
-   if(n==displayed[o])
-    break;
-  if(o<a)
-   goto mychance;
-  i++;
-  cout << "\033[2J\033[1;1H";
-  cout<<"\nEasy Level\n..........\n";
-  grid();
-  if(win())
-  {
-   cout<<"\nComputer Wins!!";
-   break;
-  }
- }
-}
-// combinging all previous functions in order to run the game
+
+#include <iostream>
+#include <stdlib.h>
+#include <ctime>
+
+using namespace std;
+
+int A[8][3] = { {1, 2, 3}, {1, 5, 9}, {1, 4, 7}, {2, 5, 8}, {3, 6, 9}, {4, 5, 6}, {7, 8, 9}, {3, 5, 7} };
+
+int displayedX[9] = {0},displayed[9] = {0},displayedO[9] = {0};
+int x_count,o_count,total,computer, is_double = 0,double_loop;
+char B[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
+
+void grid();
+void choose();
+int win();
+void check_input();
+void hard();
+void easy();
+int check_comp_pick();
+void Double();
+
 int tictactoe()
 {
-    cout << "\033[2J\033[1;1H";
+    srand((unsigned) time(0));
  cout<<"\nTIC TAC TOE\n...........\n\n";
  cout<<"1) Single Player\n2) Double Player\n\n";
  int ans;
@@ -357,7 +79,267 @@ int tictactoe()
  }
  else
   Double();
+    return 0;
 }
+
+void grid()
+{
+ for(int h=0;h<9;h+=3)
+ {
+  cout<<endl<<"   |   |"<<endl;
+  cout<<" "<<B[h]<<" | "<<B[h+1]<<" | "<<B[h+2]<<endl;
+  cout<<"   |   |"<<endl;
+  if(h<6)
+   for(int y=0;y<11;y++)
+    cout<<"-";
+ }
+}
+
+void choose()
+{
+    int flag = 0;
+    if (total < 2)
+    {
+        computer = rand()%9 + 1;
+        goto picked;
+    }    
+    else
+    {
+        for ( int i = 0; i < o_count - 1; i++)
+        {
+            int one = displayedO[i];
+            int two = displayedO[i+1];
+            for (int j = 0; j < 8; j++)
+            {
+                int sum = 3, count = 0;
+                for (int k = 0; k < 3; k++)
+                {
+                    if ( one == A[j][k] || two == A[j][k])
+                    {
+                        sum -= k;
+                        count++;
+                    }
+                }
+                if (count == 2)
+                {
+                    computer = A[j][sum];
+                    if (check_comp_pick())
+                        goto done;
+                }
+            }
+            goto picked;
+        }
+        
+        check_x:
+        cout<<"Checked X\n";
+        for ( int i = 0; i < x_count - 1; i++)
+        {
+            int one = displayedX[i];
+            int two = displayedX[i+1];
+            for (int j = 0; j < 8; j++)
+            {
+                int sum = 3, count = 0;
+                for (int k = 0; k < 3; k++)
+                {
+                    if ( one == A[j][k] || two == A[j][k])
+                    {
+                        sum -= k;
+                        count++;
+                    }
+                }
+                if (count == 2)
+                {
+                    computer = A[j][sum];
+                    if (check_comp_pick())
+                        goto done;
+                }
+            }
+        }
+    }
+    
+    picked:
+    if (!flag)
+    {
+        flag = 1;
+        goto check_x;
+    }
+    for (int i = 0; i< total; i++)
+    {
+        if ( computer == displayed[i])
+        {
+            computer = rand() %9 + 1;
+            goto picked;
+        }
+    }
+    
+    done:
+    displayedO[o_count++] = displayed[total++] = computer;
+    B[computer-1] = 'O';
+}
+
+int win()
+{
+ if((B[0]==B[1] && B[1]==B[2])||(B[0]==B[4] && B[4]==B[8]) ||(B[0]==B[3] && B[3]==B[6]) ||(B[1]==B[4] && B[4]==B[7]) ||(B[2]==B[5] && B[5]==B[8]) ||(B[4]==B[3] && B[3]==B[5]) ||(B[6]==B[7] && B[8]==B[6]) || (B[2]==B[4] && B[6]==B[4]))
+  return 1;
+ else
+  return 0;
+}
+
+void check_input()
+{
+     int op = 0,n;
+     do
+     {
+          op=0;
+          cout<<"\nEnter place: ";
+          cin>>n;
+          if(n<1 || n>9)
+          {
+               cout<<"Error.\n";
+               op=1;
+          }
+          for(int v=0;v<total;v++)
+               if(n==displayed[v])
+               {
+                    cout<<"Error.\n";
+                    op=1;
+               }
+     }while(op);
+     if ( is_double)
+     {
+         char ch;
+          if(double_loop%2==0)
+          {
+              displayedX[x_count++] = displayed[total++] = n; 
+              B[n-1] = 'X';
+              return;
+          }
+          else
+          {
+              displayedO[o_count++] = displayed[total++] = n;
+              B[n-1] = 'O';
+              return;
+          }
+     }
+    displayedX[x_count++] = displayed[total++] = n; 
+    B[n-1] = 'X';
+}
+
+void hard()
+{
+     cout << "\033[2J\033[1;1H";
+     cout<<"\nHard Level\n..........\n";
+     grid();
+     int i;
+     for(i=0;i<9;i++)
+     {
+          if(win())
+          {
+               cout<<"\nComputer Wins!!";
+               return;
+          }
+          check_input();
+          cout << "\033[2J\033[1;1H";
+          cout<<"\nHard Level\n..........\n\n";
+          grid();
+          i++;
+          if(win())
+          {
+               cout<<"\nPlayer Wins!!";
+               return;
+          }
+          if (i>=9)
+          {
+              cout<<"\n\nDraw!";
+              return;
+          }
+          choose();
+          cout << "\033[2J\033[1;1H";
+          cout<<"\nHard Level\n..........\n";
+          grid();
+     }
+      cout<<"\n\nDraw!";
+}
+
+void easy()
+{
+     cout << "\033[2J\033[1;1H";
+     cout<<"\nEasy Level\n..........\n";
+     grid();
+     for(int i=0;i<9;i++)
+     {
+          check_input();
+          cout << "\033[2J\033[1;1H";
+          cout<<"\nEasy Level\n..........\n";
+          grid();
+          if(win())
+          {
+               cout<<"\nPlayer Wins!!";
+               return;
+          }
+          mychance:
+          computer= rand()%9+1;
+          int o;
+          for( o=0;o<total;o++)
+               if(computer==displayed[o])
+                    break;
+          if(o<total)
+                goto mychance;
+          i++;
+	     
+          displayedO[o_count++] = displayed[total++] = computer;
+            B[computer-1] = 'O';
+          if (i>=9)
+          {
+              cout<<"\n\nDraw!";
+              return;
+          }
+          cout << "\033[2J\033[1;1H";
+          cout<<"\nEasy Level\n..........\n";
+          grid();
+          if(win())
+          {
+               cout<<"\nComputer Wins!!";
+               return;
+          }
+     }
+}
+
+int check_comp_pick()
+{
+    for (int i = 0; i< total; i++)
+    {
+        if ( computer == displayed[i])
+        {
+            return 0;
+        }
+    }  
+    return 1;
+}
+
+
+void Double()
+{
+     cout << "\033[2J\033[1;1H";
+     is_double = 1;
+     cout<<"\nDouble Player\n..............\n";
+     grid();
+     cout<<"\nPlayer 1:- X \nPlayer 2:- O\n";
+     for(double_loop=0;double_loop<9;double_loop++)
+     {
+          cout<<"\nPlayer "<<double_loop%2+1<<" :\n";
+          check_input();
+          cout << "\033[2J\033[1;1H";
+          cout<<"\nDouble Player\n.............\n";
+          grid();
+          if(win())
+          {
+               cout<<"\nPlayer "<<double_loop%2+1<<" Wins!!";
+               return;
+          }
+     }
+ }
+
 // end of game output
 int gameover()
 {
@@ -513,8 +495,11 @@ int i;
 for(i=0;i<26;i++,a++)
 al[i]=a;
 int j;
+	
 int ct1;
+	
 char alpha;
+	
 char s1[100];
 
 for(i=0;i<strlen(s[x]);i++)
@@ -655,14 +640,21 @@ else
 int HMSetUp()
 {
     int x,op;
+	
 char e[100][100]={"AVENGERS","MISSION IMPOSSIBLE","HARRY POTTER","DARK KNIGHT","INCEPTION","CONJURING","THE MATRIX","TERMINATOR","TRANSOFRMERS","DIE HARD","SKYFALL","CASINO ROYALE","EXORCIST","SPEED","BLACK PANTHER","FAST AND FURIOUS","JOHN WICK","INSIDIOUS"};
+	
 char t[100][100]={"COCO","INSIDE OUT","MOANA","TOY STORY","INCREDIBLES","ZOOTOPIA","FROZEN","FINDING DORY","BIG HERO","RATATOUILE","DESPICABLE ME"};
+	
 char h[100][100]={"JUNGLE BOOK","THE HOBBIT","PIRATES OF THE CARIBBEAN","FINDING NEMO","JUMANJI","AVATAR","SHAWSHANK REDEMPTION","FORREST GUMP","THE GODFATHER","THE TERMINAL","MILLIONS","SLUMDOG MILLIONARE","TITANIC","GANDHI","PURSUIT OF HAPPYNESS","SUPERBAD"};
 
 cout<<"\t\t     HANGMAN"<<endl
+	
     <<" 1. English Action/ Horror"<<endl
+	
     <<" 2. Animated Movies"<<endl
+	
     <<" 3. Big Hits(ALL CATEGORIES)"<<endl
+	
     <<" Choose Genre: ";
 	
 cin>>op;
@@ -916,4 +908,3 @@ int main(){
 		exit(0);
 
 }
-
