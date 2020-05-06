@@ -7,8 +7,8 @@ Welcome the Engg1340 group project repo. This is a text-based game project compl
 
 # How to play
 
-A Dual Game.
-First is a text guessing game and the second is Hangman. 
+A 3 in one Game.
+First is a text guessing game, the second is Hangman and the third is single and double player tic-tac-toe. 
 The user gets to choose what he/she wishes to play.
 
 **Game 1 :video_game:-- WordFever!** 
