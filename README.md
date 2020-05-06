@@ -59,7 +59,7 @@ This is a text-guessing game added with different features and functions:
       :white_check_mark: using rand() to swap letters in random order
 2. Data structures for storing game status
 
-       :white_check_mark: using multiple arrays and strings all across the code.
+      :white_check_mark: using multiple arrays and strings all across the code.
        
 3. Dynamic memory management
       
