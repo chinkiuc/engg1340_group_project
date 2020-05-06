@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <cctype>
 #include <fstream>
+#include <stdlib.h>
+#include <ctime> 
 
 #include "Begining.cpp"
 #include "swap.cpp"
@@ -19,35 +21,19 @@
 #include "grid.cpp"
 
 using namespace std;
-
 int stage, score, scoresum, numword, numcategory, spreecount, life, back;
-
 static int ct=0;
-
 bool spree;
-
 string answer, inputans, category;
-
+//word bank of game1, WordFever!
 char country[100][100] ={"CHINA", "THE UNITED STATES","JAPAN","TAIWAN","HONG KONG","AUSTRALIA","BELGIUM","BRAZIL","BULGARIA","CANADA","COLOMBIA","CUBA","DENMARK","EGYPT","FINLAND","FRANCE","GERMANY","ICELAND","ISRAEL","ITALY","KOREA","MALAYSIA","MEXICO","MOROCCO","NEW ZEALAND","NORWAY","RUSSIA","REPUBLIC OF THE CONGO","SWITZERLAND","THAILAND","TURKEY","UNITED KINGDOM","VIETNAM"};
-
 char sports[100][100] ={"BASKETBALL", "FOOTBALL", "SOCCER","LACROSSE","HOCKEY","TENNIS","VOLLEYBALL","TABLE TENNIS","BASEBALL","RUGBY","GOLF"};
-
+//array to store playername and score after game1
 char scoreboard[100][100]={};
-
 string playername;
-
-#include <iostream>
-#include <stdlib.h>
-#include <ctime>
-
-using namespace std;
-
 int A[8][3] = { {1, 2, 3}, {1, 5, 9}, {1, 4, 7}, {2, 5, 8}, {3, 6, 9}, {4, 5, 6}, {7, 8, 9}, {3, 5, 7} };
-
 int displayedX[9] = {0},displayed[9] = {0},displayedO[9] = {0};
-
 int x_count,o_count,total,computer, is_double = 0,double_loop;
-
 char B[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
 
 void grid();
@@ -354,7 +340,7 @@ char swap(string answer);
 int WordFever()
 {
 	cout << "\033[2J\033[1;1H";
-	//generating random answer (FINISHED)
+	//generating random answer
 	srand (time(NULL));
 	numcategory = rand()%2+1;
 	switch(numcategory)	
@@ -373,6 +359,7 @@ int WordFever()
 			cout << "Wrong category!!\n\n\n";
 			getchar();	
 	}
+	//game continue until the player's life reached 0
 	while (life != 0)
 	{	
 		if (spreecount>=5)
