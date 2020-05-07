@@ -95,9 +95,10 @@ int tictactoe()
  }
  else
   Double();
-  
-  cout << "\n\n        Back to Meun:1    Exit game:2";
-  cin >> back;
+
+  cout << "\n\nPress <Enter> to exit game...\n";
+  PAUSE;
+  CLEAR;
     return 0;
 }
 
@@ -344,6 +345,8 @@ void Double()
                return;
           }
      }
+     cout << "\nDraw!";
+     return;
  }
 int gameover();
 char ChangePlayerName();
