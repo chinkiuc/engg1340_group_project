@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#define PAUSE cin.get();cin.get();
+
 using namespace std;
 int GameRule()
 {
@@ -21,7 +21,8 @@ int GameRule()
 	}
 	fin.close();
 	cout << "  Press <Enter> to back to menu...\n\n";
-	PAUSE;
+	cin.get();
+	cin.get();
 	
 	back = 1;
 	

@@ -11,7 +11,6 @@
 #else 
 	#define CLEAR system("clear")
 #endif
-#define PAUSE cin.get();cin.get();
 using namespace std;
 int ScoreBoard()
 {	
@@ -57,5 +56,6 @@ int ScoreBoard()
 	cout << "    =======================================\n";
 	cout <<"    Press <Enter> to back to menu......\n\n";
 	back = 1;
-	PAUSE;
+	cin.get();
+	cin.get();
 }
