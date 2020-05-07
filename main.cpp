@@ -87,13 +87,17 @@ int tictactoe()
     w=1;
    }
   }while(w);
-  if(ans==1)
+  if(ans==1){
    easy();
+   }
   else
    hard();
  }
  else
   Double();
+  
+  cout << "\n\n        Back to Meun:1    Exit game:2";
+  cin >> back;
     return 0;
 }
 
@@ -661,6 +665,7 @@ int Op1()
 		case 3:
 			CLEAR;
 			tictactoe();
+			break;
 		default:
 			CLEAR;
 			cout << "Unknown command. Exiting game...";
@@ -675,7 +680,7 @@ void Menu()
 	int option;
 	cout <<"\n\n\n     Hi, " << playername <<".\n    ==========================================================\n\n";
 	cout <<"     1. Start Game\n"<<endl;
-	cout <<"     2. Scoreboard for Game Fever\n"<<endl;
+	cout <<"     2. WordFever! Scoreboard\n"<<endl;
 	cout <<"     3. How to play\n"<<endl;
 	cout <<"     4. Setting\n"<<endl;
 	cout <<"\n     9. Exit.\n";
