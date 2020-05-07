@@ -1,5 +1,6 @@
 # Engg1340 Group Project
 Welcome the Engg1340 group project repo. This is a text-based game project complied with  C++ language.
+This game works fine on Windows 64bit, Windows 32bit, macOS and Linux.
 
 # Identification of group members
 1. Dev Choradia Manoj (3035666669)
