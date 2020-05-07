@@ -20,6 +20,16 @@
 #include "EnterPlayerName.cpp"
 #include "grid.cpp"
 
+#ifdef _WIN64
+	#define CLEAR system("cls")
+#elif _WIN32
+	#define CLEAR system("cls")
+#else 
+	#define CLEAR system("clear")
+#endif
+
+#define PAUSE fgetc(stdin);
+
 using namespace std;
 int stage, score, scoresum, numword, numcategory, spreecount, life, back;
 static int ct=0;
@@ -233,7 +243,7 @@ void hard()
                return;
           }
           check_input();
-          cout << "\033[2J\033[1;1H";
+          CLEAR;
           cout<<"\nHard Level\n..........\n\n";
           grid();
           i++;
@@ -248,7 +258,7 @@ void hard()
               return;
           }
           choose();
-          cout << "\033[2J\033[1;1H";
+          CLEAR;
           cout<<"\nHard Level\n..........\n";
           grid();
      }
@@ -257,13 +267,13 @@ void hard()
 
 void easy()
 {
-     cout << "\033[2J\033[1;1H";
+     CLEAR;
      cout<<"\nEasy Level\n..........\n";
      grid();
      for(int i=0;i<9;i++)
      {
           check_input();
-          cout << "\033[2J\033[1;1H";
+          CLEAR;
           cout<<"\nEasy Level\n..........\n";
           grid();
           if(win())
@@ -288,7 +298,7 @@ void easy()
               cout<<"\n\nDraw!";
               return;
           }
-          cout << "\033[2J\033[1;1H";
+          CLEAR;
           cout<<"\nEasy Level\n..........\n";
           grid();
           if(win())
@@ -312,7 +322,7 @@ int check_comp_pick()
 }
 void Double()
 {
-     cout << "\033[2J\033[1;1H";
+     CLEAR;
      is_double = 1;
      cout<<"\nDouble Player\n..............\n";
      grid();
@@ -321,7 +331,7 @@ void Double()
      {
           cout<<"\nPlayer "<<double_loop%2+1<<" :\n";
           check_input();
-          cout << "\033[2J\033[1;1H";
+          CLEAR;
           cout<<"\nDouble Player\n.............\n";
           grid();
           if(win())
@@ -339,7 +349,7 @@ char swap(string answer);
 //calculating score
 int WordFever()
 {
-	cout << "\033[2J\033[1;1H";
+	CLEAR;
 	//generating random answer
 	srand (time(NULL));
 	numcategory = rand()%2+1;
@@ -366,7 +376,7 @@ int WordFever()
 			spree = true; 
 		else 
 			spree = false;
-		cout << "\033[2J\033[1;1H";
+		CLEAR;
 		cout <<"\n\n\n"<<setw(15)<<"Player: "<<playername<<endl;
 		cout <<"\n"<<setw(15)<<"Stage: "<<stage<<setw(50)<<"Score: "<<scoresum<<endl;
 		cout <<"\n"<<setw(15)<<"Life: "<<life<<setw(50)<<"Spree: ";
@@ -581,7 +591,7 @@ cout<<"\t\t     HANGMAN"<<endl
     <<" Choose Genre: ";
 	
 cin>>op;
-cout << "\033[2J\033[1;1H";
+CLEAR;
 	
 switch(op)
 {
@@ -614,8 +624,8 @@ int WFSetUp()
 	cout <<"\n\n\n\n\n\n    ========================================================   ";
 	cout << "\n\n\n     Hi! "<<playername<<".\n\n     Are You Ready? \n\n     Press <Enter> key to start!\n\n\n\n";
 	cout <<"\n\n    ========================================================   \n\n\n\n";
-	system("pause");
-	cout << "\033[2J\033[1;1H";
+	PAUSE;
+	CLEAR;
 	
 	//initate game
 	life = 6;
@@ -641,18 +651,18 @@ int Op1()
 	cin >> option;
 	switch (option){
 		case 1:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			WFSetUp();
 			break;
 		case 2:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			HMSetUp();
 			break;
 		case 3:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			tictactoe();
 		default:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			cout << "Unknown command. Exiting game...";
 			exit(1);
 	}
@@ -672,27 +682,27 @@ void Menu()
 	cout <<" \n    ==========================================================\n\n    Please enter your choice: " ;
 	cin >> option;
 	
-	cout << "\033[2J\033[1;1H";
+	CLEAR;
 	switch (option)
 	{
 		case 9:
 			back = 2;
 			break;
 		case 1:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			Op1();
 			break;
 		case 2:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			ScoreBoard();
 			break;
 		case 3:
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			GameRule();
 			break;
 		case 4:
 			int settingOption;
-			cout << "\033[2J\033[1;1H";
+			CLEAR;
 			cout << "\n\n\n   =========================================\n";
 			cout << "   |                                       |\n";
 			cout << "   |  Setting:                             |\n";
@@ -716,7 +726,7 @@ void Menu()
 				case 2:
 					remove("PlayerRecord.txt");
 					cout <<"\n    Finised! Press <Enter> to back to menu......\n\n\n\n";
-					system("pause");
+					PAUSE;
 					break;
 				case 0:
 					break;
@@ -730,11 +740,11 @@ int main(){
 	EnterPlayerName();
 	Menu();
 	while (back == 1){
-		cout << "\033[2J\033[1;1H";
+		CLEAR;
 		Menu();
 	}
 	if (back == 2)
-		cout << "\033[2J\033[1;1H";
+		CLEAR;
 		cout << "\n\n\n\n\n\n\n                         Thanks for playing!"<<"\n\n                           Goodbye!\n\n";
 		exit(0);
 

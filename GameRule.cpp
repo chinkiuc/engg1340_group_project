@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#define PAUSE fgetc(stdin);
 using namespace std;
 int GameRule()
 {
@@ -20,7 +21,7 @@ int GameRule()
 	}
 	fin.close();
 	cout << "  Press <Enter> to back to menu...\n\n";
-	system("pause");
+	PAUSE;
 	
 	back = 1;
 	

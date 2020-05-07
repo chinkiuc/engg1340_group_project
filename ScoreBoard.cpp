@@ -4,6 +4,14 @@
 #include <iomanip>
 #include <string>
 #include <string.h>
+#ifdef _WIN64
+	#define CLEAR system("cls")
+#elif _WIN32
+	#define CLEAR system("cls")
+#else 
+	#define CLEAR system("clear")
+#endif
+#define PAUSE fgetc(stdin);
 using namespace std;
 int ScoreBoard()
 {	
@@ -14,7 +22,7 @@ int ScoreBoard()
 	int i = 0;
 	int score, tempscore;
 
-	cout << "\033[2J\033[1;1H";
+	CLEAR;
 	ifstream fin("PlayerRecord.txt");
 	if (fin.fail()){
 		cout << "\n\n    No record! Back to menu..";
@@ -49,5 +57,5 @@ int ScoreBoard()
 	cout << "    =======================================\n";
 	cout <<"    Press <Enter> to back to menu......\n\n";
 	back = 1;
-	system("pause");
+	PAUSE;
 }
