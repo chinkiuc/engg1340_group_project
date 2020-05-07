@@ -11,7 +11,7 @@
 #else 
 	#define CLEAR system("clear")
 #endif
-#define PAUSE fgetc(stdin);
+#define PAUSE cin.get();cin.get();
 using namespace std;
 int ScoreBoard()
 {	

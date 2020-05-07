@@ -28,7 +28,7 @@
 	#define CLEAR system("clear")
 #endif
 
-#define PAUSE fgetc(stdin);
+#define PAUSE cin.get();cin.get();
 
 using namespace std;
 int stage, score, scoresum, numword, numcategory, spreecount, life, back;
@@ -628,7 +628,7 @@ int WFSetUp()
 	CLEAR;
 	
 	//initate game
-	life = 6;
+	life = 5;
 	stage = 1;
 	scoresum = 0;
 	spree = false;

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#define PAUSE fgetc(stdin);
+#define PAUSE cin.get();cin.get();
 using namespace std;
 int GameRule()
 {
