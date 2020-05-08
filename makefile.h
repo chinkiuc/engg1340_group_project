@@ -1,3 +1,5 @@
+$make main_main
+
 g++ -c Beginning.cpp
 g++ -c ChangePlayerName.cpp
 g++ -c EnterPlayerName.cpp
