@@ -1,28 +1,28 @@
 all: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o main run
 
-Beginning.o: Beginning.h
-	g++ -c Beginning.h
+Beginning.o: Beginning.cpp
+	g++ -c Beginning.cpp
 
-ChangePlayerName.o: ChangePlayerName.h
-	g++ -c ChangePlayerName.h
+ChangePlayerName.o: ChangePlayerName.cpp
+	g++ -c ChangePlayerName.cpp
 
-EnterPlayerName.o: EnterPlayerName.h	
-	g++ -c EnterPlayerName.h
+EnterPlayerName.o: EnterPlayerName.cpp	
+	g++ -c EnterPlayerName.cpp
 	
-gameover.o: gameover.h
-	g++ -c gameover.h
+gameover.o: gameover.cpp
+	g++ -c gameover.cpp
 	
-GameRule.o: GameRule.h	
-	g++ -c GameRule.h
+GameRule.o: GameRule.cpp	
+	g++ -c GameRule.cpp
 	
-ScoreBoard.o: ScoreBoard.h
-	g++ -c ScoreBoard.h
+ScoreBoard.o: ScoreBoard.cpp
+	g++ -c ScoreBoard.cpp
 	
-swap.o: swap.h
-	g++ -c swap.h
+swap.o: swap.cpp
+	g++ -c swap.cpp
 
-main.o: main.h	
-	g++ -c main.h
+main.o: main.cpp	
+	g++ -c main.cpp
 
 main: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o
 	g++ Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o -o main
