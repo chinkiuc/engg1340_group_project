@@ -11,13 +11,13 @@
 #include <stdlib.h>
 #include <ctime> 
 
-#include "Beginning.h"
-#include "swap.h"
-#include "GameRule.h"
-#include "ScoreBoard.h"
-#include "gameover.h"
-#include "ChangePlayerName.h"
-#include "EnterPlayerName.h"
+#include "Beginning.cpp"
+#include "swap.cpp"
+#include "GameRule.cpp"
+#include "ScoreBoard.cpp"
+#include "gameover.cpp"
+#include "ChangePlayerName.cpp"
+#include "EnterPlayerName.cpp"
 
 
 #ifdef _WIN64

@@ -1,4 +1,4 @@
-all: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o main
+all: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o main run
 
 Beginning.o: Beginning.h
 	g++ -c Beginning.h
@@ -26,3 +26,5 @@ main.o: main.h
 
 main: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o
 	g++ Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o -o main
+
+run: ./main
