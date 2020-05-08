@@ -449,6 +449,7 @@ int WordFever()
 			spreecount = 0;
 		}
 	}
+	return 0;
 }
 // hangman code
 void hang(char s[][100],int x)
@@ -648,6 +649,7 @@ switch(op)
 	break;
 }
 ct=0;
+return 0;
 }
 // wordfever main set up
 int WFSetUp()
@@ -670,7 +672,7 @@ int WFSetUp()
 	WordFever();
 	gameover();	
 
-	
+	return 0;
 }
 void EnterPlayerName();
 //Option 1 from menu
@@ -700,6 +702,7 @@ int Op1()
 			cout << "Unknown command. Exiting game...";
 			exit(1);
 	}
+	return 0;
 }
 int GameRule();
 int ScoreBoard();
