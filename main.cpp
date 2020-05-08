@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <ctime> 
 
-#include "Beginning.cpp"
+#include "Beginning.h"
 #include "swap.cpp"
 #include "GameRule.cpp"
 #include "ScoreBoard.cpp"
