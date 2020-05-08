@@ -478,7 +478,7 @@ for(i=0;i<strlen(s[x]);i++)
 
 for(;ct<9;)
 { 
-
+  
   cout<<"\n\n No. of turns remaining: "<<9-ct<<' ';
   cout<<"\n Enter letter: ";
   cin>>alpha;
@@ -588,6 +588,8 @@ if(ct!=9)
 {
  cout<<endl;
  cout<<"You win";
+ cout <<"\n\n1. Back to menu        2.Exit\n"; 
+ cin >> back;
 }
 else
 { 
