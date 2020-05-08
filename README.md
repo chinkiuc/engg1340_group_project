@@ -6,6 +6,9 @@ This game works fine on Windows 64bit, Windows 32bit, macOS and Linux.
 1. Dev Choradia Manoj (3035666669)
 2. Choi Chin Kiu (3035557351)
 
+# Getting 
+If you're using macOs, you can use "make -f makefile" from terminal to execute the game.
+
 # How to play
 
 A 3 in one Game.
