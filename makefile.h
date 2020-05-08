@@ -1,6 +1,6 @@
 all: Beginning.o ChangePlayerName.o EnterPlayerName.o gameover.o GameRule.o ScoreBoard.o swap.o main.o main clean run
 
-Beginning.o: Beginning.cpp Beginning.h
+Beginning.o: Beginning.cpp
 	g++ -c Beginning.cpp
 
 ChangePlayerName.o: ChangePlayerName.cpp
