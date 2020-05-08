@@ -18,7 +18,7 @@
 #include "gameover.cpp"
 #include "ChangePlayerName.cpp"
 #include "EnterPlayerName.cpp"
-#include "grid.cpp"
+
 
 #ifdef _WIN64
 	#define CLEAR system("cls")
@@ -96,13 +96,37 @@ int tictactoe()
  else
   Double();
 
-  cout << "\n\nPress <Enter> to exit game...\n";
-  PAUSE;
+  x_count = 0;o_count = 0;total =0;computer=0; is_double = 0,double_loop=0;
+  fill(displayedX, displayedX+9, 0);
+  fill(displayed, displayed+9, 0);
+  fill(displayedO, displayedO+9, 0);
+  B[0]='1';B[1]='2';B[2]='3';B[3]='4';B[4]='5';B[5]='6';B[6]='7';B[8]='9';
+  A[0][0]=1;A[0][1]=2;A[0][2]=3;
+  A[1][0]=1;A[1][1]=5;A[1][2]=9;
+  A[2][0]=1;A[2][1]=4;A[2][2]=7;
+  A[3][0]=2;A[3][1]=5;A[3][2]=8;
+  A[4][0]=3;A[4][1]=6;A[4][2]=9;
+  A[5][0]=4;A[5][1]=5;A[5][2]=6;
+  A[6][0]=7;A[6][1]=8;A[6][2]=9;
+  A[7][0]=3;A[7][1]=5;A[3][3]=7;
+  cout << "\n\nPress <1> to back to menu.   <2> to exit game.\n";
+  cin >> back;
   CLEAR;
     return 0;
 }
 
-void grid();
+void grid()
+{
+ for(int h=0;h<9;h+=3)
+ {
+  cout<<endl<<"   |   |"<<endl;
+  cout<<" "<<B[h]<<" | "<<B[h+1]<<" | "<<B[h+2]<<endl;
+  cout<<"   |   |"<<endl;
+  if(h<6)
+   for(int y=0;y<11;y++)
+    cout<<"-";
+ }
+}
 
 void choose()
 {
