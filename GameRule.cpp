@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-int GameRule()
+static int GameRule()
 {
 	extern int back;
 	string rule;

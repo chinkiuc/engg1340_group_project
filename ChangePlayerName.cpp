@@ -3,7 +3,7 @@
 #include <string>
 
 using namespace std;
-char ChangePlayerName()
+static char ChangePlayerName()
 {
 	extern string playername;
 	cout << "\n     Please enter your new player name: ";

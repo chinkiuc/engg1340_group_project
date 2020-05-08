@@ -9,7 +9,7 @@
 	#define CLEAR system("clear")
 #endif
 using namespace std;
-void EnterPlayerName()
+static void EnterPlayerName()
 {
 	extern string playername;
 	cout<<"\n\n\n\n\n\n\n          Hi, Player! \n\n          Please enter your name:  ";

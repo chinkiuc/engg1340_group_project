@@ -10,7 +10,7 @@
 #include <string.h>
 #include <iomanip>
 using namespace std;
-char swap(string answer)
+static char swap(string answer)
 {
 	const int n = answer.size()+1;
 	char *word = new char[100];

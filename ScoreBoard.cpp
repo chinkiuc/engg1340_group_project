@@ -12,7 +12,7 @@
 	#define CLEAR system("clear")
 #endif
 using namespace std;
-int ScoreBoard()
+static int ScoreBoard()
 {	
 	extern int back;
 	string namelist[100] = {};

@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-int gameover()
+static int gameover()
 {
 	extern string playername;
 	extern int back, scoresum;
