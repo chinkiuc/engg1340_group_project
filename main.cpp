@@ -372,9 +372,7 @@ void Double()
      cout << "\nDraw!";
      return;
  }
-int gameover();
-char ChangePlayerName();
-char swap(string answer);
+
 //Game1 (WordFever!)'s main code
 //using rand() to generate random answer
 //calculating score
@@ -674,7 +672,6 @@ int WFSetUp()
 
 	return 0;
 }
-void EnterPlayerName();
 //Option 1 from menu
 //choosing game1/2/3
 int Op1()
@@ -704,8 +701,6 @@ int Op1()
 	}
 	return 0;
 }
-int GameRule();
-int ScoreBoard();
 //main Menu
 void Menu()
 {
@@ -770,7 +765,6 @@ void Menu()
 			}
 }
 }
-int Beginning();
 // main function
 int main(){
 	Beginning();
