@@ -25,5 +25,5 @@ int GameRule()
 	cin.get();
 	
 	back = 1;
-	
+	return 0;
 }

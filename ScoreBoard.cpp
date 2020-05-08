@@ -58,4 +58,5 @@ int ScoreBoard()
 	back = 1;
 	cin.get();
 	cin.get();
+	return 0;
 }

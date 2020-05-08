@@ -34,4 +34,6 @@ char swap(string answer)
 			cout << word[i] << "  ";}
 	cout <<"\n\n";
 	delete[] word;
+	return 0;
 }
+

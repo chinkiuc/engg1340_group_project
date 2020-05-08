@@ -11,5 +11,6 @@ char ChangePlayerName()
 	cout <<"\n    Finised! Press <Enter> to back to menu......\n\n\n\n";
 	cin.get();
 	cin.get();
+	return 0;
 }
 
