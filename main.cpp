@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <ctime> 
 
-#include "Begining.cpp"
+#include "Beginning.cpp"
 #include "swap.cpp"
 #include "GameRule.cpp"
 #include "ScoreBoard.cpp"
@@ -765,10 +765,10 @@ void Menu()
 			}
 }
 }
-int Begining();
+int Beginning();
 // main function
 int main(){
-	Begining();
+	Beginning();
 	EnterPlayerName();
 	Menu();
 	while (back == 1){
