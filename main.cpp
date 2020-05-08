@@ -95,7 +95,7 @@ int tictactoe()
  }
  else
   Double();
-
+  // Resetting game stat...
   x_count = 0;o_count = 0;total =0;computer=0; is_double = 0,double_loop=0;
   fill(displayedX, displayedX+9, 0);
   fill(displayed, displayed+9, 0);
