@@ -15,4 +15,5 @@ int Beginning()
 	cout <<"\n            CHOI CHIN KIU      (3035557351)\n\n            DEV CHORADIA MANOJ (3035666669)\n\n\n\n\n\n         Press <ENTER> key to continue...... \n\n\n\n";
 	cin.get();
 	CLEAR;
+	return 0;
 }
