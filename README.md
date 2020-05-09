@@ -50,7 +50,7 @@ Support single player and mulit-player mode.
 This is a text-guessing game added with different features and functions:
 1. Random function used to generate words and other events in the game
 2. Multiple arrays and structures used to store words, blanks, letters and other game statuses 
-3. Both static and dynamic memory Allocation along with time calculating features
+3. Both static and dynamic memory Allocation .
 4. Files to save results of ongoing and completed games
 5. Pictorial representation and other functions like stacks and queues used for order management.
 
