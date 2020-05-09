@@ -46,16 +46,16 @@ int displayedX[9] = {0},displayed[9] = {0},displayedO[9] = {0};
 int x_count,o_count,total,computer, is_double = 0,double_loop;
 char B[9] = {'1','2','3','4','5','6','7','8','9'},ch1='X',ch2='O';
 
-void grid();
-void choose();
-int win();
+void grid(); // the grid for tictactoe (layout od the #)
+void choose(); 
+int win();  // returns 1 if player has won
 void check_input();
-void hard();
-void easy();
+void hard(); //the hard single player is this function
+void easy(); //the easy single player is this function
 int check_comp_pick();
-void Double();
+void Double(); // double player code
 
-int tictactoe()
+int tictactoe()// uses all the previous functions together to run the game
 {
     srand((unsigned) time(0));
  cout<<"\nTIC TAC TOE\n...........\n\n";
